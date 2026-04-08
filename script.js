@@ -6,8 +6,8 @@ const chilometri = document.getElementById("km")
 
 const bottone = document.getElementById("btn")
 
-bottone.addEventListener("click", function () {
-    
+bottone.addEventListener("click", function (e) {
+    e.preventDefault()
     const age = parseInt(età.value)
     const km = parseFloat(chilometri.value)
 
@@ -18,7 +18,7 @@ bottone.addEventListener("click", function () {
     } else if (età > 65) {
         prezzo = prezzo * 0.6
     }
-    console.log("Prezzo finale" + prezzo.toFixed(2) + "€");
+    console.log(prezzo.toFixed(2) + "€");
     
 })
 
