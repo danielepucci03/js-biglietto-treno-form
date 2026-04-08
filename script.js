@@ -10,11 +10,7 @@ bottone.addEventListener("click", function (e) {
     const age = parseInt(età.value)
     const km = parseFloat(chilometri.value)
 
-    if (isNaN(km) || isNaN(eta)) {
-    risultato.textContent = "Inserisci valori validi!";
-    return;
-  }
-
+    
     let prezzo = km * 0.21;
 
     if (età < 18) {
@@ -22,7 +18,10 @@ bottone.addEventListener("click", function (e) {
     } else if (età > 65) {
         prezzo = prezzo * 0.6
     }
-    console.log(prezzo.toFixed(2) + "€");
+
+    const prezzoFinale = prezzo.toFixed(2);
+
+    risultato.textContent = "Prezzo finale: " + prezzoFinale + " €";
     
 })
 
